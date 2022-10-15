@@ -144,3 +144,38 @@ Proxy = select, Direct
 ### Proxy filter
 
 You can use the code `$group('Name', operator, 'operand')` to filter the keys of the modifier group with a specific name. You can use `#!name XXX` to specify the name of the group.
+
+#### Supported operator
+
+> `contains` filter the keys whose name contains the operand.
+>
+> `matches` filter the keys whose name (regex) matches the operand.
+>
+> `prefix` filter the keys whose name has operand prefix.
+>
+> `suffix` filter the keys whose name has operand suffix.
+>
+
+``` Properties
+[Proxy]
+#!type modify
+#!name ProxyList
+
+#!insert $from('https://proxy.list/from/some/conf/')
+
+[Proxy Group]
+#!type modify
+
+#!append Daily = url-test, $group('ProxyList', contains, 'Daily'), url = http://www.qualcomm.cn/generate_204, interval = 300, tolerance = 100, timeout = 5
+```
+
+## Example
+
+### Modifier example
+
+- [basicRules.conf](https://github.com/Kaelzs/SS-Modifier/tree/master/basicRules.conf)
+- [modifier.example.conf](https://github.com/Kaelzs/SS-Modifier/tree/master/modifier.example.conf)
+
+### Request example
+
+> https://ss.kaelzs.com/surge/convert?urls[]=https%3A%2F%2Fraw.githubusercontent.com%2FKaelzs%2FSS-Modifier%2Fmaster%2Fhead.conf&urls[]=https%3A%2F%2Fraw.githubusercontent.com%2FKaelzs%2FSS-Modifier%2Fmaster%2FbasicRules.conf&urls[]=https%3A%2F%2Fraw.githubusercontent.com%2FKaelzs%2FSS-Modifier%2Fmaster%2Fother.conf&urls[]=https%3A%2F%2Fraw.githubusercontent.com%2FKaelzs%2FSS-Modifier%2Fmaster%2Fmitm.conf&interval=900&name=surge.conf
