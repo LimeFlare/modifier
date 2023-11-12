@@ -9,4 +9,8 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
     && apt-get -q dist-upgrade -y \
     && rm -rf /var/lib/apt/lists/*
 
-# Se
+# Set up a build area
+WORKDIR /build
+
+# First just resolve dependencies.
+# This creates a cached layer
