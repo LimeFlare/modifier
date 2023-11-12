@@ -22,3 +22,6 @@ RUN swift package resolve
 # Copy entire repo into container
 COPY . .
 
+# Build everything, with optimizations
+RUN swift build -c release --static-swift-stdlib
+
