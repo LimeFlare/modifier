@@ -13,4 +13,6 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
 WORKDIR /build
 
 # First just resolve dependencies.
-# This creates a cached layer
+# This creates a cached layer that can be reused
+# as long as your Package.swift/Package.resolved
+# files do not chan
