@@ -25,3 +25,7 @@ COPY . .
 # Build everything, with optimizations
 RUN swift build -c release --static-swift-stdlib
 
+# Switch to the staging area
+WORKDIR /staging
+
+# Copy main executable to stagi
