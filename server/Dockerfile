@@ -29,4 +29,7 @@ RUN swift build -c release --static-swift-stdlib
 WORKDIR /staging
 
 # Copy main executable to staging area
-RUN cp "$(swift build --package-path /build -c release --show-bin-path)/Run"
+RUN cp "$(swift build --package-path /build -c release --show-bin-path)/Run" ./
+
+# Copy resources bundled by SPM to staging area
+RUN find -L "$(swift bui
