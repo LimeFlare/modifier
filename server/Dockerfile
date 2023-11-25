@@ -28,4 +28,5 @@ RUN swift build -c release --static-swift-stdlib
 # Switch to the staging area
 WORKDIR /staging
 
-# Copy main executable to stagi
+# Copy main executable to staging area
+RUN cp "$(swift build --package-path /build -c release --show-bin-path)/Run"
