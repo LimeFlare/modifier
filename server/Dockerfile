@@ -32,4 +32,4 @@ WORKDIR /staging
 RUN cp "$(swift build --package-path /build -c release --show-bin-path)/Run" ./
 
 # Copy resources bundled by SPM to staging area
-RUN find -L "$(swift bui
+RUN find -L "$(swift build --package-path /build -c release --show-bin-path)/" -regex '.*\.resources$' -exec cp 
