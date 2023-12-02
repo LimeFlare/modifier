@@ -42,4 +42,6 @@ RUN [ -d /build/Resources ] && { mv /build/Resources ./Resources && chmod -R a-w
 # ================================
 # Run image
 # ================================
-FROM ubu
+FROM ubuntu:focal
+
+# Make sure all system packages are up to date, and install only essential 
