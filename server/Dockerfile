@@ -63,4 +63,5 @@ RUN useradd --user-group --create-home --system --skel /dev/null --home-dir /app
 # Switch to the new home directory
 WORKDIR /app
 
-# Copy built exec
+# Copy built executable and any staged resources from builder
+COPY --from=build --chown=vapor:vapor /
