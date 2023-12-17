@@ -5,4 +5,6 @@ let package = Package(
     name: "server",
     platforms: [
        .macOS(.v10_15)
-  
+    ],
+    dependencies: [
+        .package(url: "https://github.com/vapor/vapor.git
