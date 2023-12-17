@@ -1,4 +1,8 @@
 // swift-tools-version:5.6
 import PackageDescription
 
-let pa
+let package = Package(
+    name: "server",
+    platforms: [
+       .macOS(.v10_15)
+  
