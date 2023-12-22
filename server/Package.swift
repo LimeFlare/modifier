@@ -13,4 +13,7 @@ let package = Package(
         .target(
             name: "App",
             dependencies: [
-                .product(name: "Vapor", package: "vapor"
+                .product(name: "Vapor", package: "vapor")
+            ],
+            swiftSettings: [
+                .unsafeFlags(["-cross-modu
