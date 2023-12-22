@@ -12,4 +12,5 @@ let package = Package(
     targets: [
         .target(
             name: "App",
- 
+            dependencies: [
+                .product(name: "Vapor", package: "vapor"
