@@ -16,4 +16,7 @@ let package = Package(
                 .product(name: "Vapor", package: "vapor")
             ],
             swiftSettings: [
-                .unsafeFlags(["-cross-modu
+                .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
+            ]
+        ),
+        .e
