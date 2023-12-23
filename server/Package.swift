@@ -19,4 +19,7 @@ let package = Package(
                 .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
             ]
         ),
-        .e
+        .executableTarget(
+            name: "Run",
+            dependencies: [
+              
