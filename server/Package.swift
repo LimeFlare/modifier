@@ -22,4 +22,8 @@ let package = Package(
         .executableTarget(
             name: "Run",
             dependencies: [
-              
+                .target(name: "App")
+            ]
+        ),
+    ]
+)
