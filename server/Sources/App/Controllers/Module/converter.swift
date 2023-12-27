@@ -11,4 +11,5 @@ import FoundationNetworking
 #endif
 
 extension SurgeController {
-    func convert(_ req: R
+    func convert(_ req: Request) throws -> EventLoopFuture<AnyResponse> {
+        let urls = req.ex
