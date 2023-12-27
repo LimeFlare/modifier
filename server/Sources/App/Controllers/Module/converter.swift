@@ -7,4 +7,8 @@
 
 import Vapor
 #if canImport(FoundationNetworking)
-import F
+import FoundationNetworking
+#endif
+
+extension SurgeController {
+    func convert(_ req: R
