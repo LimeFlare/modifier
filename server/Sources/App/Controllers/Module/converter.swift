@@ -12,4 +12,7 @@ import FoundationNetworking
 
 extension SurgeController {
     func convert(_ req: Request) throws -> EventLoopFuture<AnyResponse> {
-        let urls = req.ex
+        let urls = req.extractOneOrMoreUrl(key: "urls")
+
+        guard urls.count > 0 else {
+            throw Abort(.badRequ
