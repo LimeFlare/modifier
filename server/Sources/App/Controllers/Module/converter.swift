@@ -18,4 +18,7 @@ extension SurgeController {
             throw Abort(.badRequest, reason: "no url specified")
         }
 
-        URLCache.shared.removeAllCachedRe
+        URLCache.shared.removeAllCachedResponses()
+
+        return urls.map { req.client.get(URI(string: $0.absoluteString)) }
+       
