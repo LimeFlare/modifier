@@ -15,4 +15,7 @@ extension SurgeController {
         let urls = req.extractOneOrMoreUrl(key: "urls")
 
         guard urls.count > 0 else {
-            throw Abort(.badRequ
+            throw Abort(.badRequest, reason: "no url specified")
+        }
+
+        URLCache.shared.removeAllCachedRe
