@@ -22,4 +22,6 @@ extension SurgeController {
 
         return urls.map { req.client.get(URI(string: $0.absoluteString)) }
             .flatten(on: req.eventLoop)
-            .flatMap { modifierResponses -> EventL
+            .flatMap { modifierResponses -> EventLoopFuture<([(ClientResponse, URL)], [Surge.GroupModifier])> in
+
+             
