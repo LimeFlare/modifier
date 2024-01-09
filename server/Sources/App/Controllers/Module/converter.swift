@@ -24,4 +24,7 @@ extension SurgeController {
             .flatten(on: req.eventLoop)
             .flatMap { modifierResponses -> EventLoopFuture<([(ClientResponse, URL)], [Surge.GroupModifier])> in
 
-                let modifierContents = modifierResponses.compactMap { $0.body.flatMap {
+                let modifierContents = modifierResponses.compactMap { $0.body.flatMap { String(buffer: $0) } }
+
+                guard modifierContents.count > 0 else {
+           
