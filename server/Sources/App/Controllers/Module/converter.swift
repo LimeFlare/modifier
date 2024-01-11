@@ -27,4 +27,7 @@ extension SurgeController {
                 let modifierContents = modifierResponses.compactMap { $0.body.flatMap { String(buffer: $0) } }
 
                 guard modifierContents.count > 0 else {
-                    return req.eventLoop.future(error: Abort(.badRequest, reason: "no content available
+                    return req.eventLoop.future(error: Abort(.badRequest, reason: "no content available, check url's availbility."))
+                }
+
+                var resources: Set<U
