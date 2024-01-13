@@ -30,4 +30,5 @@ extension SurgeController {
                     return req.eventLoop.future(error: Abort(.badRequest, reason: "no content available, check url's availbility."))
                 }
 
-                var resources: Set<U
+                var resources: Set<URL> = []
+                let groupModifiers: [Surge.GroupModifier] = modifierContents
