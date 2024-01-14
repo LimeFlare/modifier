@@ -33,4 +33,5 @@ extension SurgeController {
                 var resources: Set<URL> = []
                 let groupModifiers: [Surge.GroupModifier] = modifierContents.flatMap { urlContent -> [Surge.GroupModifier] in
                     let result = Surge.GroupModifier.extract(from: urlContent)
-                    r
+                    result.resources.forEach({ resources.insert($0) })
+                    return 
