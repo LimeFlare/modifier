@@ -34,4 +34,7 @@ extension SurgeController {
                 let groupModifiers: [Surge.GroupModifier] = modifierContents.flatMap { urlContent -> [Surge.GroupModifier] in
                     let result = Surge.GroupModifier.extract(from: urlContent)
                     result.resources.forEach({ resources.insert($0) })
-                    return 
+                    return result.groupModifiers
+                }
+
+                return resources.map { url i
