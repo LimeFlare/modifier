@@ -37,4 +37,5 @@ extension SurgeController {
                     return result.groupModifiers
                 }
 
-                return resources.map { url i
+                return resources.map { url in req.client.get(URI(string: url.absoluteString)).map { ($0, url) } }
+      
