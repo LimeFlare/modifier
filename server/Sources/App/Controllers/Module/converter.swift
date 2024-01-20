@@ -38,4 +38,5 @@ extension SurgeController {
                 }
 
                 return resources.map { url in req.client.get(URI(string: url.absoluteString)).map { ($0, url) } }
-      
+                    .flatten(on: req.eventLoop)
+                    .and(value: groupModifiers)
