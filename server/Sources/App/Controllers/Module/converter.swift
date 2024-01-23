@@ -42,4 +42,5 @@ extension SurgeController {
                     .and(value: groupModifiers)
         }.flatMap { resourceResponses, groupModifiers -> EventLoopFuture<AnyResponse> in
             var resources: Surge.GroupModifier.Resources = [:]
-            resourceResponses.f
+            resourceResponses.forEach { clientResponse, url in
+                if (200..<300).contains(clientResponse.s
