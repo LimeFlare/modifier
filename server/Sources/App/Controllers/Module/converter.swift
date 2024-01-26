@@ -43,4 +43,6 @@ extension SurgeController {
         }.flatMap { resourceResponses, groupModifiers -> EventLoopFuture<AnyResponse> in
             var resources: Surge.GroupModifier.Resources = [:]
             resourceResponses.forEach { clientResponse, url in
-                if (200..<300).contains(clientResponse.s
+                if (200..<300).contains(clientResponse.status.code),
+                    let body = clientResponse.body {
+                    resources[u
