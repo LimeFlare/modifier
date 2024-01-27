@@ -49,4 +49,5 @@ extension SurgeController {
                 }
             }
 
-            let skipNormalProxy = req.getBool(key: "skipNormalPr
+            let skipNormalProxy = req.getBool(key: "skipNormalProxy") ?? req.getBool(key: "skipnormalproxy") ?? true
+            let profile = Surge.g
