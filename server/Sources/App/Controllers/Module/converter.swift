@@ -47,4 +47,6 @@ extension SurgeController {
                     let body = clientResponse.body {
                     resources[url] = String(buffer: body).trimmingCharacters(in: .newlines)
                 }
-       
+            }
+
+            let skipNormalProxy = req.getBool(key: "skipNormalPr
