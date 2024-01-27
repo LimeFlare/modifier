@@ -45,4 +45,6 @@ extension SurgeController {
             resourceResponses.forEach { clientResponse, url in
                 if (200..<300).contains(clientResponse.status.code),
                     let body = clientResponse.body {
-                    resources[u
+                    resources[url] = String(buffer: body).trimmingCharacters(in: .newlines)
+                }
+       
