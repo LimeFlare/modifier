@@ -53,4 +53,6 @@ extension SurgeController {
             let profile = Surge.generate(with: groupModifiers, resources: resources, skipNormalProxy: skipNormalProxy)
 
             let needManaged = req.getBool(key: "managed") ?? true
-            let prefix: Strin
+            let prefix: String
+            if needManaged {
+                if let url = req.headers.first(name: .h
