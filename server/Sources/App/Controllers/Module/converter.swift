@@ -57,4 +57,5 @@ extension SurgeController {
             if needManaged {
                 if let url = req.headers.first(name: .host).flatMap({ "http://" + $0 + req.url.string }) {
                     let interval = (try? req.query.get(Int.self, at: "interval")) ?? 3600
-                    let strict = req.getBoo
+                    let strict = req.getBool(key: "strict") ?? false
+                    prefix = "#!MANAGED-CONFIG \(url) inter
