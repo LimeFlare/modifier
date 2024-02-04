@@ -60,4 +60,7 @@ extension SurgeController {
                     let strict = req.getBool(key: "strict") ?? false
                     prefix = "#!MANAGED-CONFIG \(url) interval=\(interval), strict=\(strict)\n\n"
                 } else {
-                    prefix = "# Ca
+                    prefix = "# Cant get url.\n\n"
+                }
+            } else {
+                prefix = ""
