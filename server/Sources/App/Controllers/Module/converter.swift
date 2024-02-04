@@ -64,3 +64,8 @@ extension SurgeController {
                 }
             } else {
                 prefix = ""
+            }
+
+            let isPreview: Bool = req.getBool(key: "preview") ?? false
+
+ 
