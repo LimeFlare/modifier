@@ -68,4 +68,5 @@ extension SurgeController {
 
             let isPreview: Bool = req.getBool(key: "preview") ?? false
 
- 
+            let response = Response(status: .ok, body: .init(string: prefix + profile))
+      
