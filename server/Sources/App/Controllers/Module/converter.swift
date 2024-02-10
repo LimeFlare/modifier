@@ -69,4 +69,5 @@ extension SurgeController {
             let isPreview: Bool = req.getBool(key: "preview") ?? false
 
             let response = Response(status: .ok, body: .init(string: prefix + profile))
-      
+            if isPreview {
+                response.headers.add(name: .contentType, va
