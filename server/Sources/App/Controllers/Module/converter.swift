@@ -70,4 +70,6 @@ extension SurgeController {
 
             let response = Response(status: .ok, body: .init(string: prefix + profile))
             if isPreview {
-                response.headers.add(name: .contentType, va
+                response.headers.add(name: .contentType, value: "text/plain; charset=utf-8")
+            } else {
+                res
