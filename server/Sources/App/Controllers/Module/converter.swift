@@ -72,4 +72,6 @@ extension SurgeController {
             if isPreview {
                 response.headers.add(name: .contentType, value: "text/plain; charset=utf-8")
             } else {
-                response.headers.add(name: .contentType, value: "application/octet-stream; cha
+                response.headers.add(name: .contentType, value: "application/octet-stream; charset=utf-8")
+                let name: String = req.query["name"] ?? "surge.conf"
+  
