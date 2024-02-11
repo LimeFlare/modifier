@@ -72,4 +72,4 @@ extension SurgeController {
             if isPreview {
                 response.headers.add(name: .contentType, value: "text/plain; charset=utf-8")
             } else {
-                res
+                response.headers.add(name: .contentType, value: "application/octet-stream; cha
