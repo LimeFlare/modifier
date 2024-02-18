@@ -78,3 +78,6 @@ extension SurgeController {
             }
 
             return req.eventLoop.future(AnyResponse(response))
+        }
+    }
+}
