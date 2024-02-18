@@ -74,4 +74,7 @@ extension SurgeController {
             } else {
                 response.headers.add(name: .contentType, value: "application/octet-stream; charset=utf-8")
                 let name: String = req.query["name"] ?? "surge.conf"
-                response.headers.add(name: .contentDisposition, value: "attachment; 
+                response.headers.add(name: .contentDisposition, value: "attachment; filename=\(name)")
+            }
+
+            return req.eventLoop.future(AnyResponse(response))
