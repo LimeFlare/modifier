@@ -6,4 +6,9 @@
 //  Copyright © 2020 Kael Yang. All rights reserved.
 //
 
-import Foun
+import Foundation
+
+extension Surge {
+     enum Group {
+        private static let keyValueSupportedGroup = [
+          
