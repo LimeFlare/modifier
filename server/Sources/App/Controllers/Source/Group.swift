@@ -11,4 +11,8 @@ import Foundation
 extension Surge {
      enum Group {
         private static let keyValueSupportedGroup = [
-          
+            "General",
+            "Replica",
+            "Proxy",
+            "Proxy Group",
+            "MI
