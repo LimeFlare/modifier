@@ -19,4 +19,7 @@ extension Surge {
         ].map { $0.lowercased() }
 
         static func isKeyValueGroup(_ groupName: String) -> Bool {
-            return keyValueSupportedGroup.contains(groupName.lowercased
+            return keyValueSupportedGroup.contains(groupName.lowercased())
+        }
+    }
+}
