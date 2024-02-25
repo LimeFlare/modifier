@@ -15,4 +15,7 @@ extension Surge {
             "Replica",
             "Proxy",
             "Proxy Group",
-            "MI
+            "MITM",
+        ].map { $0.lowercased() }
+
+        static func isKeyValueGroup(_ groupNam
