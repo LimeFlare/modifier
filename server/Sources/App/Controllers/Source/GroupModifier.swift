@@ -6,4 +6,7 @@
 //  Copyright © 2020 Kael Yang. All rights reserved.
 //
 
-import Foundati
+import Foundation
+
+// MARK: - Variable declaractions & Convenience mutating function
+extensi
