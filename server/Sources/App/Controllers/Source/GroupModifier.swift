@@ -9,4 +9,7 @@
 import Foundation
 
 // MARK: - Variable declaractions & Convenience mutating function
-extensi
+extension Surge {
+    struct GroupModifier {
+        enum ModificationType {
+           
