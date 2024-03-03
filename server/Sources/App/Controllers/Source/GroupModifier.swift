@@ -18,4 +18,6 @@ extension Surge {
 
         let groupName: String
 
-        
+        var name: String?
+        var modificationType: ModificationType = .replace {
+            di
