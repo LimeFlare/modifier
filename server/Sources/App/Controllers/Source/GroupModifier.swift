@@ -12,4 +12,10 @@ import Foundation
 extension Surge {
     struct GroupModifier {
         enum ModificationType {
-           
+            case replace
+            case modify
+        }
+
+        let groupName: String
+
+        
