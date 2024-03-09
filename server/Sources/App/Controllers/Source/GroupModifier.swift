@@ -20,4 +20,6 @@ extension Surge {
 
         var name: String?
         var modificationType: ModificationType = .replace {
-            di
+            didSet {
+                if oldValue != modificationType {
+                    self
