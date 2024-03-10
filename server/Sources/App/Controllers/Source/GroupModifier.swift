@@ -22,4 +22,9 @@ extension Surge {
         var modificationType: ModificationType = .replace {
             didSet {
                 if oldValue != modificationType {
-                    self
+                    self.cleanContentsForTypeChanging()
+                }
+            }
+        }
+
+   
