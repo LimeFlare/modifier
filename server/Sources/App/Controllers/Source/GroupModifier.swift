@@ -27,4 +27,5 @@ extension Surge {
             }
         }
 
-   
+        var isBasedOnResources: Bool = false
+        var requiredModifierNam
