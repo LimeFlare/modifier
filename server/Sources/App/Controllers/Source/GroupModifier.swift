@@ -28,4 +28,7 @@ extension Surge {
         }
 
         var isBasedOnResources: Bool = false
-        var requiredModifierNam
+        var requiredModifierNames: [String] = []
+
+        var insertedModifiers: [Modifier] = []
+        var appended
