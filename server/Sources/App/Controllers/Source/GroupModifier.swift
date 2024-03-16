@@ -34,4 +34,6 @@ extension Surge {
         var appendedModifiers: [Modifier] = []
         var updators: [Updator] = []
 
- 
+        var resources: Set<URL> = []
+
+        private mutating func addResourc
