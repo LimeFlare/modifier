@@ -31,4 +31,7 @@ extension Surge {
         var requiredModifierNames: [String] = []
 
         var insertedModifiers: [Modifier] = []
-        var appended
+        var appendedModifiers: [Modifier] = []
+        var updators: [Updator] = []
+
+ 
