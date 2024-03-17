@@ -37,4 +37,8 @@ extension Surge {
         var resources: Set<URL> = []
 
         private mutating func addResourceIfNeeded(for modifier: Modifier) {
-            if case .resource(let url) = 
+            if case .resource(let url) = modifier {
+                resources.insert(url)
+            }
+        }
+
