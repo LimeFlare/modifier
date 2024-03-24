@@ -53,4 +53,7 @@ extension Surge {
         }
 
         mutating func add(updator: Updator) {
-            updators.a
+            updators.append(updator)
+        }
+
+        private mutating func cleanContentsForTypeChanging(
