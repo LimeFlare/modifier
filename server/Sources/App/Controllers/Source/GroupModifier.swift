@@ -50,3 +50,7 @@ extension Surge {
         mutating func add(appendedModifier modifierr: Modifier) {
             addResourceIfNeeded(for: modifierr)
             appendedModifiers.append(modifierr)
+        }
+
+        mutating func add(updator: Updator) {
+            updators.a
