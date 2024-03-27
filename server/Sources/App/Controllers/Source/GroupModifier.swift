@@ -58,4 +58,7 @@ extension Surge {
 
         private mutating func cleanContentsForTypeChanging() {
             self.insertedModifiers = []
-            self.append
+            self.appendedModifiers = []
+            self.updators = []
+            self.resources = []
+   
