@@ -67,4 +67,5 @@ extension Surge {
 
 // MARK: - Extractor
 extension Surge.GroupModifier {
-    typealias Ext
+    typealias ExtractResult = (groupModifiers: [Self], resources: Set<URL>)
+    private static let decor
