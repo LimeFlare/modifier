@@ -70,4 +70,6 @@ extension Surge.GroupModifier {
     typealias ExtractResult = (groupModifiers: [Self], resources: Set<URL>)
     private static let decoratorHelperRegex = try! NSRegularExpression(pattern: #"^#!([^\s\r]+)\s*"#, options: [.anchorsMatchLines])
     static func extract(from string: String) -> ExtractResult {
-       
+        let splittedLines = string.components(separatedBy: .newlines)
+
+        var 
