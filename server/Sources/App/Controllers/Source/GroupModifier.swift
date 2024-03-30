@@ -61,4 +61,10 @@ extension Surge {
             self.appendedModifiers = []
             self.updators = []
             self.resources = []
-   
+        }
+    }
+}
+
+// MARK: - Extractor
+extension Surge.GroupModifier {
+    typealias Ext
