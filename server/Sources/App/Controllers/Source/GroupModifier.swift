@@ -74,4 +74,8 @@ extension Surge.GroupModifier {
 
         var modifiers: [Self] = []
         var resources: Set<URL> = []
-        var igno
+        var ignoringGroupNames: Set<String> = []
+
+        var toHandledLines: [String] = []
+
+        for line in
