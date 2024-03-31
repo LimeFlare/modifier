@@ -72,4 +72,6 @@ extension Surge.GroupModifier {
     static func extract(from string: String) -> ExtractResult {
         let splittedLines = string.components(separatedBy: .newlines)
 
-        var 
+        var modifiers: [Self] = []
+        var resources: Set<URL> = []
+        var igno
