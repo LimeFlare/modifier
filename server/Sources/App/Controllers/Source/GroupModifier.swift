@@ -79,4 +79,5 @@ extension Surge.GroupModifier {
         var toHandledLines: [String] = []
 
         for line in splittedLines.reversed() {
-            guard let range = line.range(of: #"\[.+\]"#, options: 
+            guard let range = line.range(of: #"\[.+\]"#, options: [.anchored, .regularExpression]) else {
+                toHandledLines.appe
