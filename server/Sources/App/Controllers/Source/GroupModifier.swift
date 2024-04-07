@@ -84,4 +84,4 @@ extension Surge.GroupModifier {
                 continue
             }
 
-            let groupName =
+            let groupName = String(line[line.index(range.lowerBound, offsetBy: 1) ..< line.index(range.upperB
