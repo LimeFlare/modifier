@@ -87,3 +87,8 @@ extension Surge.GroupModifier {
             let groupName = String(line[line.index(range.lowerBound, offsetBy: 1) ..< line.index(range.upperBound, offsetBy: -1)])
 
             guard !ignoringGroupNames.contains(groupName) else {
+                toHandledLines = []
+                continue
+            }
+
+            igno
