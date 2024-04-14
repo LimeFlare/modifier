@@ -91,4 +91,7 @@ extension Surge.GroupModifier {
                 continue
             }
 
-            igno
+            ignoringGroupNames.insert(groupName)
+
+            toHandledLines.reverse()
+            guard l
