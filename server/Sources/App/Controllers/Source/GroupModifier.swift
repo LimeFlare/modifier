@@ -94,4 +94,5 @@ extension Surge.GroupModifier {
             ignoringGroupNames.insert(groupName)
 
             toHandledLines.reverse()
-            guard l
+            guard let emptyPrefixCount = toHandledLines.firstIndex(where: { !$0.isEmpty }),
+       
