@@ -95,4 +95,4 @@ extension Surge.GroupModifier {
 
             toHandledLines.reverse()
             guard let emptyPrefixCount = toHandledLines.firstIndex(where: { !$0.isEmpty }),
-       
+                let emptySuffixCountHelper = toHandledLines.lastIndex(where: { !$0.isEmpty }) else
