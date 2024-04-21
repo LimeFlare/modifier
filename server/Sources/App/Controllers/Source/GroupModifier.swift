@@ -99,4 +99,4 @@ extension Surge.GroupModifier {
                     toHandledLines = []
                     continue
             }
- 
+            let emptySuffixCount = toHandledLines.count - emptySuffixCou
