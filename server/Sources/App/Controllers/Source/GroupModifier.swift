@@ -102,4 +102,7 @@ extension Surge.GroupModifier {
             let emptySuffixCount = toHandledLines.count - emptySuffixCountHelper - 1
 
             toHandledLines.removeFirst(emptyPrefixCount)
-            toHandledLines.re
+            toHandledLines.removeLast(emptySuffixCount)
+
+            var groupModifier = Self(groupName: groupName)
+
