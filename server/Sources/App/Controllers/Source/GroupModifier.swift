@@ -106,3 +106,6 @@ extension Surge.GroupModifier {
 
             var groupModifier = Self(groupName: groupName)
 
+            let groupSupportKeyValue = Surge.Group.isKeyValueGroup(groupName)
+
+      
