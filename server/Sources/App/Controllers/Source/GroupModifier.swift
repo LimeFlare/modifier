@@ -109,4 +109,5 @@ extension Surge.GroupModifier {
             let groupSupportKeyValue = Surge.Group.isKeyValueGroup(groupName)
 
             for handledLine in toHandledLines {
-                let nsString = NSString(stri
+                let nsString = NSString(string: handledLine)
+                guard let firstMatchResult = Self.decoratorHelperRegex
