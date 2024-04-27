@@ -108,4 +108,5 @@ extension Surge.GroupModifier {
 
             let groupSupportKeyValue = Surge.Group.isKeyValueGroup(groupName)
 
-      
+            for handledLine in toHandledLines {
+                let nsString = NSString(stri
