@@ -110,4 +110,4 @@ extension Surge.GroupModifier {
 
             for handledLine in toHandledLines {
                 let nsString = NSString(string: handledLine)
-                guard let firstMatchResult = Self.decoratorHelperRegex
+                guard let firstMatchResult = Self.decoratorHelperRegex.firstMatch(in: handledLine, options: [], range: NSRange(location: 0, length: nsSt
