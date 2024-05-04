@@ -111,4 +111,5 @@ extension Surge.GroupModifier {
             for handledLine in toHandledLines {
                 let nsString = NSString(string: handledLine)
                 guard let firstMatchResult = Self.decoratorHelperRegex.firstMatch(in: handledLine, options: [], range: NSRange(location: 0, length: nsString.length)) else {
-                    if groupModifier.modificat
+                    if groupModifier.modificationType == .replace {
+                        let modifier = Modifier
