@@ -113,4 +113,6 @@ extension Surge.GroupModifier {
                 guard let firstMatchResult = Self.decoratorHelperRegex.firstMatch(in: handledLine, options: [], range: NSRange(location: 0, length: nsString.length)) else {
                     if groupModifier.modificationType == .replace {
                         let modifier = Modifier(handledLine, supportKeyValue: groupSupportKeyValue)
-                     
+                        groupModifier.add(insertedModifier: modifier)
+                    }
+                    c
