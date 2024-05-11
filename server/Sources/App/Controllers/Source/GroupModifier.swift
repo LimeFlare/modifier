@@ -115,4 +115,7 @@ extension Surge.GroupModifier {
                         let modifier = Modifier(handledLine, supportKeyValue: groupSupportKeyValue)
                         groupModifier.add(insertedModifier: modifier)
                     }
-                    c
+                    continue
+                }
+
+                let decorator = nsString.substrin
