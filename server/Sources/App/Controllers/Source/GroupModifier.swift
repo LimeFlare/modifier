@@ -118,4 +118,5 @@ extension Surge.GroupModifier {
                     continue
                 }
 
-                let decorator = nsString.substrin
+                let decorator = nsString.substring(with: firstMatchResult.range(at: 1))
+                let modifierString = nsString.substr
