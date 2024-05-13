@@ -123,4 +123,4 @@ extension Surge.GroupModifier {
 
                 switch decorator {
                 case "type":
-     
+                    switch modifierString.trimmingCharacters(in: .whitespaces).lowerca
