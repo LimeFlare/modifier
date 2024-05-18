@@ -125,4 +125,6 @@ extension Surge.GroupModifier {
                 case "type":
                     switch modifierString.trimmingCharacters(in: .whitespaces).lowercased() {
                     case "modify", "modifier":
-                        gro
+                        groupModifier.modificationType = .modify
+                        ignoringGroupNames.remove(groupName)
+   
