@@ -127,4 +127,5 @@ extension Surge.GroupModifier {
                     case "modify", "modifier":
                         groupModifier.modificationType = .modify
                         ignoringGroupNames.remove(groupName)
-   
+                    case "replace":
+                        groupModifier.modificat
