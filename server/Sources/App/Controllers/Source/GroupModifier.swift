@@ -133,4 +133,6 @@ extension Surge.GroupModifier {
                     default:
                         continue
                     }
-                c
+                case "name":
+                    groupModifier.name = modifierString
+                case "inse
