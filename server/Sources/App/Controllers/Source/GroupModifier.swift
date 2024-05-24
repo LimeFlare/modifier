@@ -130,4 +130,7 @@ extension Surge.GroupModifier {
                     case "replace":
                         groupModifier.modificationType = .replace
                         ignoringGroupNames.insert(groupName)
-             
+                    default:
+                        continue
+                    }
+                c
