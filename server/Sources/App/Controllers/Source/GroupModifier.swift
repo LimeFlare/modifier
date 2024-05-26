@@ -137,4 +137,5 @@ extension Surge.GroupModifier {
                     groupModifier.name = modifierString
                 case "insert", "inserted":
                     groupModifier.add(insertedModifier: Modifier(modifierString, supportKeyValue: groupSupportKeyValue))
-                case "append"
+                case "append", "appended":
+                    groupModifier.add(appendedModifier: Modifier(modifierS
