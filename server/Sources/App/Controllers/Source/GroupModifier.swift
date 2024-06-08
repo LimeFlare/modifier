@@ -140,4 +140,6 @@ extension Surge.GroupModifier {
                 case "append", "appended":
                     groupModifier.add(appendedModifier: Modifier(modifierString, supportKeyValue: groupSupportKeyValue))
                 case "basedOnResources":
-                    switch modifierString.trimmingCharacters
+                    switch modifierString.trimmingCharacters(in: .whitespaces).lowercased() {
+                    case "true", "1", "yes":
+             
