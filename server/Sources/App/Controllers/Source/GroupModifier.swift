@@ -142,4 +142,5 @@ extension Surge.GroupModifier {
                 case "basedOnResources":
                     switch modifierString.trimmingCharacters(in: .whitespaces).lowercased() {
                     case "true", "1", "yes":
-             
+                        groupModifier.isBasedOnResources = true
+                        igno
