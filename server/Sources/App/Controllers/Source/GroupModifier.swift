@@ -144,4 +144,6 @@ extension Surge.GroupModifier {
                     case "true", "1", "yes":
                         groupModifier.isBasedOnResources = true
                         ignoringGroupNames.remove(groupName)
-                    case "false", "0",
+                    case "false", "0", "no":
+                        groupModifier.isBasedOnResources = false
+                    defa
