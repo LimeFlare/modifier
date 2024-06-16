@@ -146,4 +146,7 @@ extension Surge.GroupModifier {
                         ignoringGroupNames.remove(groupName)
                     case "false", "0", "no":
                         groupModifier.isBasedOnResources = false
-                    defa
+                    default:
+                        continue
+                    }
+                case "r
