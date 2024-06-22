@@ -149,4 +149,5 @@ extension Surge.GroupModifier {
                     default:
                         continue
                     }
-                case "r
+                case "requiredModifiers":
+                    let modifierNames = modifierString.sp
