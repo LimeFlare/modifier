@@ -150,4 +150,6 @@ extension Surge.GroupModifier {
                         continue
                     }
                 case "requiredModifiers":
-                    let modifierNames = modifierString.split(separator: ",").map({ $0.trimmingCharacters(in: .whitespaces) }).filter { !$0.isE
+                    let modifierNames = modifierString.split(separator: ",").map({ $0.trimmingCharacters(in: .whitespaces) }).filter { !$0.isEmpty }
+                    if !modifierNames.isEmpty {
+                        groupModi
