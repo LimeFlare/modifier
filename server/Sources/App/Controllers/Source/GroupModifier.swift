@@ -158,4 +158,4 @@ extension Surge.GroupModifier {
                 case let updatorDecorator where updatorDecorator.starts(with: "update"),
                      let updatorDecorator where updatorDecorator.count > 7:
 
-                    let updator
+                    let updatorTypedString = String(updatorDecorator[updatorDecorator.index(updatorDecor
