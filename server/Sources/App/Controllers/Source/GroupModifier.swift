@@ -153,4 +153,6 @@ extension Surge.GroupModifier {
                     let modifierNames = modifierString.split(separator: ",").map({ $0.trimmingCharacters(in: .whitespaces) }).filter { !$0.isEmpty }
                     if !modifierNames.isEmpty {
                         groupModifier.requiredModifierNames += modifierNames
-                        ignoringGroupNames.r
+                        ignoringGroupNames.remove(groupName)
+                    }
+                case let updatorDecorator
