@@ -155,4 +155,5 @@ extension Surge.GroupModifier {
                         groupModifier.requiredModifierNames += modifierNames
                         ignoringGroupNames.remove(groupName)
                     }
-                case let updatorDecorator
+                case let updatorDecorator where updatorDecorator.starts(with: "update"),
+                     let up
