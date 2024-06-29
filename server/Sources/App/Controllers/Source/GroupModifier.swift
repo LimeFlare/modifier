@@ -156,4 +156,6 @@ extension Surge.GroupModifier {
                         ignoringGroupNames.remove(groupName)
                     }
                 case let updatorDecorator where updatorDecorator.starts(with: "update"),
-                     let up
+                     let updatorDecorator where updatorDecorator.count > 7:
+
+                    let updator
