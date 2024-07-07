@@ -160,4 +160,5 @@ extension Surge.GroupModifier {
 
                     let updatorTypedString = String(updatorDecorator[updatorDecorator.index(updatorDecorator.startIndex, offsetBy: 7)...])
                     if let updator = Updator(updatorTypedString: updatorTypedString, content: modifierString) {
-     
+                        groupModifier.add(updator: updator)
+              
