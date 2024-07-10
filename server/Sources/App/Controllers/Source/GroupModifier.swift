@@ -163,4 +163,6 @@ extension Surge.GroupModifier {
                         groupModifier.add(updator: updator)
                     } else {
                         groupModifier.add(insertedModifier: Modifier.plain("# updator syntax error \(updatorTypedString) not recognized."))
-                 
+                    }
+                default:
+                    groupModifier.add(inserte
