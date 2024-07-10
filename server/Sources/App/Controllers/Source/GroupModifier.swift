@@ -162,4 +162,5 @@ extension Surge.GroupModifier {
                     if let updator = Updator(updatorTypedString: updatorTypedString, content: modifierString) {
                         groupModifier.add(updator: updator)
                     } else {
-                        groupModifier.add(insertedModifier: Modifier.plain("# u
+                        groupModifier.add(insertedModifier: Modifier.plain("# updator syntax error \(updatorTypedString) not recognized."))
+                 
