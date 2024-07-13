@@ -165,4 +165,9 @@ extension Surge.GroupModifier {
                         groupModifier.add(insertedModifier: Modifier.plain("# updator syntax error \(updatorTypedString) not recognized."))
                     }
                 default:
-                    groupModifier.add(insertedModifier: Modifier.plain("# decorator not recognized, \(decorator)
+                    groupModifier.add(insertedModifier: Modifier.plain("# decorator not recognized, \(decorator)"))
+                }
+            }
+
+            toHandledLines = []
+           
