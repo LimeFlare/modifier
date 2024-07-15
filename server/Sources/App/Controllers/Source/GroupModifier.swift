@@ -170,4 +170,5 @@ extension Surge.GroupModifier {
             }
 
             toHandledLines = []
-           
+            modifiers.append(groupModifier)
+            groupModifier.resources.forEach({ res
