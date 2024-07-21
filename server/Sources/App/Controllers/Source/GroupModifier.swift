@@ -171,4 +171,7 @@ extension Surge.GroupModifier {
 
             toHandledLines = []
             modifiers.append(groupModifier)
-            groupModifier.resources.forEach({ res
+            groupModifier.resources.forEach({ resources.insert($0) })
+        }
+
+        return (modifiers.reversed(), resources
