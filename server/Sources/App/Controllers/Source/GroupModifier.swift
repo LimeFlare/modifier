@@ -174,4 +174,10 @@ extension Surge.GroupModifier {
             groupModifier.resources.forEach({ resources.insert($0) })
         }
 
-        return (modifiers.reversed(), resources
+        return (modifiers.reversed(), resources)
+    }
+}
+
+// MARK: - Profile generator
+extension Surge.GroupModifier {
+    publ
