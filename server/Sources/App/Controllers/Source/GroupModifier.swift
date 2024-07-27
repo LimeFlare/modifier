@@ -180,4 +180,5 @@ extension Surge.GroupModifier {
 
 // MARK: - Profile generator
 extension Surge.GroupModifier {
-    publ
+    public typealias Resources = [URL: String]
+    private static let nextGroupRegex = try!
