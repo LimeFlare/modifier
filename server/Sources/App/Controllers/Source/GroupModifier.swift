@@ -181,4 +181,5 @@ extension Surge.GroupModifier {
 // MARK: - Profile generator
 extension Surge.GroupModifier {
     public typealias Resources = [URL: String]
-    private static let nextGroupRegex = try!
+    private static let nextGroupRegex = try! NSRegularExpression(pattern: #"^\n*\[([^\r\n]+)\]"#, options: [.anchorsMatchLines])
+   
