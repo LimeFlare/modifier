@@ -184,4 +184,7 @@ extension Surge.GroupModifier {
     private static let nextGroupRegex = try! NSRegularExpression(pattern: #"^\n*\[([^\r\n]+)\]"#, options: [.anchorsMatchLines])
     private func flat(modifier: Modifier, withResource resources: Resources, skipNormalProxy: Bool) -> [Modifier] {
         guard case .resource(let url) = modifier else {
-   
+            return [modifier]
+        }
+
+        guard let resource = resources[u
