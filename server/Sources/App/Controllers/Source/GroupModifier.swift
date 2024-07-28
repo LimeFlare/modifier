@@ -182,4 +182,6 @@ extension Surge.GroupModifier {
 extension Surge.GroupModifier {
     public typealias Resources = [URL: String]
     private static let nextGroupRegex = try! NSRegularExpression(pattern: #"^\n*\[([^\r\n]+)\]"#, options: [.anchorsMatchLines])
-    private func flat(modifier: Modifier, withResource resources: Resources, skipNormalProx
+    private func flat(modifier: Modifier, withResource resources: Resources, skipNormalProxy: Bool) -> [Modifier] {
+        guard case .resource(let url) = modifier else {
+   
