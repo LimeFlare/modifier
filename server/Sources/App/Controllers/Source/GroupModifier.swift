@@ -187,4 +187,5 @@ extension Surge.GroupModifier {
             return [modifier]
         }
 
-        guard let resource = resources[u
+        guard let resource = resources[url] else {
+            return [Modifier.plain("# cannot download resource f
