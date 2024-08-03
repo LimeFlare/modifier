@@ -193,3 +193,4 @@ extension Surge.GroupModifier {
 
         let toHandledContents: String
 
+        let groupTitleRegex = try! NSRegularExpression(pattern: #"^\["# + self.groupName + 
