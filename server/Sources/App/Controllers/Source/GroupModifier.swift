@@ -188,4 +188,8 @@ extension Surge.GroupModifier {
         }
 
         guard let resource = resources[url] else {
-            return [Modifier.plain("# cannot download resource f
+            return [Modifier.plain("# cannot download resource from \(url.absoluteString)")]
+        }
+
+        let toHandledContents: String
+
