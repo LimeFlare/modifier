@@ -195,4 +195,6 @@ extension Surge.GroupModifier {
 
         let groupTitleRegex = try! NSRegularExpression(pattern: #"^\["# + self.groupName + #"\][^\n]*\n+"#, options: [.anchorsMatchLines])
         let nsString = NSString(string: resource)
-        if let matched = groupTitleRegex.firstMatch(in: resource, opti
+        if let matched = groupTitleRegex.firstMatch(in: resource, options: [], range: NSRange(location: 0, length: nsString.length)) {
+
+            let groupN
