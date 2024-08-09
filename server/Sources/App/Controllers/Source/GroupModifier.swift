@@ -200,4 +200,6 @@ extension Surge.GroupModifier {
             let groupNameRange = matched.range
             let start = groupNameRange.location + groupNameRange.length
 
-            let endRange = Self.nextGroupRegex.firstMatch(in: resource, options: [], range: NS
+            let endRange = Self.nextGroupRegex.firstMatch(in: resource, options: [], range: NSRange(location: start, length: nsString.length - start))?.range
+
+            let endLoca
