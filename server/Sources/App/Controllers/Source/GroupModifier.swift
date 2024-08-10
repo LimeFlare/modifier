@@ -209,4 +209,6 @@ extension Surge.GroupModifier {
             toHandledContents = resource
         }
 
-        let toHandledLines = toHandledContents.trimmingCharacters(in: .whitespacesAndNewl
+        let toHandledLines = toHandledContents.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
+
+        let groupSupportKeyValue = Surge.Group.isKeyV
