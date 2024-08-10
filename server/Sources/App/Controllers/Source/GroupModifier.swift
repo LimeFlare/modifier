@@ -204,4 +204,4 @@ extension Surge.GroupModifier {
 
             let endLocation = endRange?.location ?? nsString.length
 
-            toHandledContents = 
+            toHandledContents = nsString.substring(with: NSRange(location: start, length: endLocation - st
