@@ -209,4 +209,4 @@ extension Surge.GroupModifier {
             toHandledContents = resource
         }
 
- 
+        let toHandledLines = toHandledContents.trimmingCharacters(in: .whitespacesAndNewl
