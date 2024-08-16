@@ -211,4 +211,6 @@ extension Surge.GroupModifier {
 
         let toHandledLines = toHandledContents.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: .newlines)
 
-        let groupSupportKeyValue = Surge.Group.isKeyV
+        let groupSupportKeyValue = Surge.Group.isKeyValueGroup(groupName)
+
+        var toHandledModifiers = toHandledLines.map({ 
