@@ -213,4 +213,6 @@ extension Surge.GroupModifier {
 
         let groupSupportKeyValue = Surge.Group.isKeyValueGroup(groupName)
 
-        var toHandledModifiers = toHandledLines.map({ 
+        var toHandledModifiers = toHandledLines.map({ Modifier($0, supportKeyValue: groupSupportKeyValue) })
+
+        if self.grou
