@@ -215,4 +215,6 @@ extension Surge.GroupModifier {
 
         var toHandledModifiers = toHandledLines.map({ Modifier($0, supportKeyValue: groupSupportKeyValue) })
 
-        if self.grou
+        if self.groupName.lowercased() == "proxy",
+           skipNormalProxy {
+        
