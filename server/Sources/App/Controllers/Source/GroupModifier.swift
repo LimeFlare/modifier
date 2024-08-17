@@ -217,4 +217,5 @@ extension Surge.GroupModifier {
 
         if self.groupName.lowercased() == "proxy",
            skipNormalProxy {
-        
+            toHandledModifiers.removeAll { modifier in
+                if case let .key
