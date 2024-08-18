@@ -218,4 +218,6 @@ extension Surge.GroupModifier {
         if self.groupName.lowercased() == "proxy",
            skipNormalProxy {
             toHandledModifiers.removeAll { modifier in
-                if case let .key
+                if case let .keyValue(kv) = modifier,
+                   kv.values.count == 1,
+                   ["dir
