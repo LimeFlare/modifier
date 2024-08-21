@@ -220,4 +220,5 @@ extension Surge.GroupModifier {
             toHandledModifiers.removeAll { modifier in
                 if case let .keyValue(kv) = modifier,
                    kv.values.count == 1,
-                   ["dir
+                   ["direct", "reject", "reject-tinygif"].contains(kv.values[0]) {
+                    return tru
