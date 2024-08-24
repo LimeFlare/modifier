@@ -229,4 +229,8 @@ extension Surge.GroupModifier {
 
         return [Modifier.plain("# resource from \(url.absoluteString)")]
             + toHandledModifiers
-            + [Modifier.plain("# resource e
+            + [Modifier.plain("# resource end \(url.absoluteString)")]
+    }
+
+    struct ResourceError: Error {
+        l
