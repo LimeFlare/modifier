@@ -227,4 +227,6 @@ extension Surge.GroupModifier {
             }
         }
 
-        return [Modifier.plain("# resource from \(url.absoluteString)")
+        return [Modifier.plain("# resource from \(url.absoluteString)")]
+            + toHandledModifiers
+            + [Modifier.plain("# resource e
