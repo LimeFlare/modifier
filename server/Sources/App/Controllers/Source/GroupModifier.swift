@@ -221,4 +221,8 @@ extension Surge.GroupModifier {
                 if case let .keyValue(kv) = modifier,
                    kv.values.count == 1,
                    ["direct", "reject", "reject-tinygif"].contains(kv.values[0]) {
-                    return tru
+                    return true
+                }
+                return false
+            }
+       
