@@ -233,4 +233,6 @@ extension Surge.GroupModifier {
     }
 
     struct ResourceError: Error {
-        l
+        let url: URL
+    }
+    func flat(withResources resources: Resources, skipNormal
