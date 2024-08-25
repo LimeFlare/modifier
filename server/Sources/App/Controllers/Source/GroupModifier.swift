@@ -235,4 +235,5 @@ extension Surge.GroupModifier {
     struct ResourceError: Error {
         let url: URL
     }
-    func flat(withResources resources: Resources, skipNormal
+    func flat(withResources resources: Resources, skipNormalProxy: Bool) -> Result<Self, ResourceError> {
+        guard !self.resources.isEmpt
