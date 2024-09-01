@@ -236,4 +236,8 @@ extension Surge.GroupModifier {
         let url: URL
     }
     func flat(withResources resources: Resources, skipNormalProxy: Bool) -> Result<Self, ResourceError> {
-        guard !self.resources.isEmpt
+        guard !self.resources.isEmpty else {
+            return .success(self)
+        }
+
+        if self.isBasedOnResources
