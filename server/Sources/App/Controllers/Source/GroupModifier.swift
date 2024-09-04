@@ -240,4 +240,5 @@ extension Surge.GroupModifier {
             return .success(self)
         }
 
-        if self.isBasedOnResources
+        if self.isBasedOnResources,
+            let errorResources = self.resources.first(where: { resources[$0] == nil
