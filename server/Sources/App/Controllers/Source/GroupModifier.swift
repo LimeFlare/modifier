@@ -243,3 +243,7 @@ extension Surge.GroupModifier {
         if self.isBasedOnResources,
             let errorResources = self.resources.first(where: { resources[$0] == nil }) {
             return .failure(ResourceError(url: errorResources))
+        }
+
+        var copy = self
+        copy.insertedModifiers = copy.insertedModifiers
