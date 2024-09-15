@@ -247,4 +247,4 @@ extension Surge.GroupModifier {
 
         var copy = self
         copy.insertedModifiers = copy.insertedModifiers.flatMap { self.flat(modifier: $0, withResource: resources, skipNormalProxy: skipNormalProxy) }
-        copy.appendedModifiers = copy.appendedModifie
+        copy.appendedModifiers = copy.appendedModifiers.flatMap { self.flat(modifier: $0, withResource: resources, skipNormalProxy: skipN
