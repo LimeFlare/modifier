@@ -35,3 +35,104 @@ private func split(valueString: String) -> SplittedValue {
             insertResultToValueArray(withCurrentIndex: stringIndex)
             lastIndex = valueString.index(after: stringIndex)
         case "\'", "\"":
+            if quoteSet.contains(char) {
+                // It's safe to get the previous char when quoteSet is not empty..
+                guard valueString[valueString.index(before: stringIndex)] != #"\"# else {
+                    return
+                }
+                quoteSet.remove(char)
+            } else {
+                quoteSet.insert(char)
+            }
+        case "(", ")":
+            guard quoteSet.isEmpty else {
+                return
+            }
+            if char == "(" {
+                parenthesesLevel += 1
+            } else {
+                parenthesesLevel -= 1
+            }
+        default:
+            return
+        }
+    }
+    if lastIndex < valueString.endIndex {
+        insertResultToValueArray(withCurrentIndex: valueString.endIndex)
+    }
+    return (valueArray, functionIndics)
+}
+
+extension Surge.GroupModifier {
+    enum Modifier {
+        struct KeyValue {
+            var key: String
+            var values: [String]
+
+            let functionIndics: [Int]
+        }
+
+        case keyValue(KeyValue)
+        case plain(String)
+        case resource(URL)
+
+        private static let resourceRangeRegex = try! NSRegularExpression(pattern: #"\$from\(\s*\'([^\s\']+)\'\s*\)"#, options: [.caseInsensitive])
+        init(_ rawValue: String, supportKeyValue: Bool) {
+            let trimmedValue = rawValue.trimmingCharacters(in: .whitespaces)
+
+            let nsString = NSString(string: trimmedValue)
+            if let firstResult = Self.resourceRangeRegex.firstMatch(in: trimmedValue, options: .anchored, range: NSRange(location: 0, length: nsString.length)) {
+                let resourceRange = firstResult.range(at: 1)
+                let resourceUrlString = nsString.substring(with: resourceRange)
+                if let resourceUrl = URL(string: resourceUrlString) {
+                    self = .resource(resourceUrl)
+                } else {
+                    self = .plain("# Invalid resource url \(resourceUrlString)")
+                }
+                return
+            }
+
+            if supportKeyValue,
+                let firstEqualRange = trimmedValue.range(of: #"\s*=\s*"#, options: .regularExpression, range: nil, locale: nil) {
+
+                let key = String(trimmedValue[..<firstEqualRange.lowerBound])
+                let values = String(trimmedValue[firstEqualRange.upperBound...])
+                let splittedValue = split(valueString: values)
+                self = .keyValue(KeyValue(key: key, values: splittedValue.valueArray, functionIndics: splittedValue.functionIndics))
+                return
+            }
+
+            self = .plain(rawValue)
+        }
+
+        func exportToString() -> String {
+            switch self {
+            case .keyValue(let kv):
+                return kv.key + " = " + kv.values.filter({ !$0.isEmpty }).joined(separator: ", ")
+            case .plain(let str):
+                return str
+            case .resource(let url):
+                return "# load resource from \(url) error."
+            }
+        }
+    }
+}
+
+extension Surge.GroupModifier {
+    struct Updator {
+        enum `Type` {
+            case insert(index: Int, value: String)
+            case append(index: Int, value: String)
+            case replace(value: String)
+            case delete(index: Int)
+        }
+
+        let designatedKey: String
+        let type: Type
+
+        init?(updatorTypedString: String, content: String) {
+            if let deletedIndex = updatorTypedString.range(of: "delete-").flatMap({ Int(updatorTypedString[$0.upperBound...]) }) {
+                let designatedKey = content.trimmingCharacters(in: .whitespaces)
+                self.designatedKey = designatedKey
+                self.type = .delete(index: deletedIndex)
+                return
