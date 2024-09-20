@@ -136,3 +136,51 @@ extension Surge.GroupModifier {
                 self.designatedKey = designatedKey
                 self.type = .delete(index: deletedIndex)
                 return
+            }
+
+            guard let firstEqualIndex = content.firstIndex(of: "=") else {
+                return nil
+            }
+            self.designatedKey = content[..<firstEqualIndex].trimmingCharacters(in: .whitespaces)
+
+            let value = content[firstEqualIndex...].dropFirst().trimmingCharacters(in: .whitespaces)
+
+            if updatorTypedString == "replace" {
+                self.type = .replace(value: value)
+                return
+            } else if let insertedIndex = updatorTypedString.range(of: "insert-").flatMap({ Int(updatorTypedString[$0.upperBound...]) }) {
+                self.type = .insert(index: insertedIndex, value: value)
+                return
+            } else if let appendedIndex = updatorTypedString.range(of: "append-").flatMap({ Int(updatorTypedString[$0.upperBound...]) }) {
+                self.type = .append(index: appendedIndex, value: value)
+                return
+            }
+            return nil
+        }
+
+        func update(modifier: Modifier) -> Modifier {
+            guard case .keyValue(let kv) = modifier else {
+                return modifier
+            }
+
+            var values = kv.values
+
+            switch self.type {
+            case .insert(let index, let value):
+                values.insert(value, at: index)
+            case .append(let index, let value):
+                values.insert(value, at: values.count - index)
+            case .replace(let value):
+                values = [value]
+            case .delete(let index):
+                var values = kv.values
+                if values.count > index {
+                    values.remove(at: index)
+                }
+            }
+            let newRawValue = kv.key + "=" + values.joined(by: ",")
+
+            return .init(newRawValue, supportKeyValue: true)
+        }
+    }
+}
