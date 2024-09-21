@@ -9,4 +9,6 @@ import Vapor
 
 struct SurgeController {
     func routes(_ router: RoutesBuilder) throws {
-        router.get("conver
+        router.get("convert", use: convert)
+    }
+}
