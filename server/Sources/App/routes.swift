@@ -1,4 +1,6 @@
 import Vapor
 
 func routes(_ app: Application) throws {
-    let surgeController = SurgeControl
+    let surgeController = SurgeController()
+    try surgeController.routes(app.grouped("surge"))
+}
