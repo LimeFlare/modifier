@@ -12,4 +12,9 @@
 #      Start app: docker-compose up app
 #       Stop all: docker-compose down
 #
-ver
+version: '3.7'
+
+x-shared_environment: &shared_environment
+  LOG_LEVEL: ${LOG_LEVEL:-debug}
+
+servi
